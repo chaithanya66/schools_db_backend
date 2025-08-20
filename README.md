@@ -79,6 +79,7 @@ Description: Fetch all schools and return them sorted by proximity to user’s l
 curl -X GET "https://schoos-assignment.onrender.com/listSchools?latitude=17.3850&longitude=78.4867"
 
 📦 Example Response
+```
 {
   "success": true,
   "schools": [
@@ -100,11 +101,11 @@ curl -X GET "https://schoos-assignment.onrender.com/listSchools?latitude=17.3850
     }
   ]
 }
-
+```
 📐 Distance Calculation (Haversine Formula)
 
 To calculate the distance between two latitude/longitude points, the Haversine formula is used:
-
+```
 function calculateDistance(lat1, lon1, lat2, lon2) {
   const R = 6371; // Radius of Earth in km
   const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -117,10 +118,11 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return (R * c).toFixed(2); // Distance in KM
 }
-
+```
 🧪 Testing with Postman
 
-Import the Postman collection (School Management API.postman_collection.json).
+Postman link:
+https://universal-zodiac-358216.postman.co/workspace/1f9f4fbf-615a-4068-90f1-7ea02b94e19e/collection/40906900-d8d6cbba-62e9-4ccb-b9c0-9fbf034f8623?action=share&source=copy-link&creator=40906900
 
 Test /addSchool and /listSchools APIs with your desired input.
 
