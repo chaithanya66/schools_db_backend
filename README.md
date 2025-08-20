@@ -40,13 +40,25 @@ A RESTful backend API for managing school data, built with Node.js, Express, and
 
 1. **Clone the repository**
 
+git clone <repository-url>
+cd school_assignment
+
 2. **Install dependencies**
 
+npm install
 
 3. **Create a `.env` file** in the project root with the following content—replace values accordingly:
 
+DB_HOST=<YOUR_DB_HOST>
+DB_PORT=5432
+DB_USER=<YOUR_DB_USERNAME>
+DB_PASSWORD=<YOUR_DB_PASSWORD>
+DB_NAME=<YOUR_DB_NAME>
+PORT=5004
+
 4. **Run the server**
 
+npm start
 
 5. The server will start on `http://localhost:5004` (or your defined port).
 
@@ -56,16 +68,33 @@ A RESTful backend API for managing school data, built with Node.js, Express, and
 
 ### Add a New School
 
+POST /addSchool
+Content-Type: application/json
 
 #### Request Body
 
+{
+"name": "Example School",
+"address": "123 Main St",
+"latitude": 37.7749,
+"longitude": -122.4194
+}
 
 #### Success Response (201 Created)
 
+{
+"id": 1,
+"name": "Example School",
+"address": "123 Main St",
+"latitude": 37.7749,
+"longitude": -122.4194
+}
 
 ---
 
 ### List Schools by Proximity
+
+GET /listSchools?latitude={lat}&longitude={lon}
 
 #### Query Parameters
 
@@ -76,6 +105,17 @@ A RESTful backend API for managing school data, built with Node.js, Express, and
 
 #### Success Response (200 OK)
 
+[
+{
+"id": 1,
+"name": "Example School",
+"address": "123 Main St",
+"latitude": 37.7749,
+"longitude": -122.4194,
+"distance": "0.00"
+},
+...
+]
 
 ---
 
@@ -88,6 +128,13 @@ A RESTful backend API for managing school data, built with Node.js, Express, and
 
 ## 🎨 Project Structure
 
+school_assignment/
+├── node_modules/
+├── .env
+├── index.js # Main server and API logic
+├── package.json
+├── README.md
+└── ...
 
 ---
 
@@ -131,13 +178,5 @@ For any inquiries, please reach out via GitHub or email.
 > ## ✉️ Contact
 > ```
 >
-> - Use code blocks (fenced with ```
-> - Use tables for neat presentation of data like technologies or parameters.
-> - Separate sections with horizontal rules (`---`).
->
-> - Maintain consistent indentation and spacing in code blocks and lists.
 
-***
-
-If you want, I can generate this README file for immediate upload or provide a styled HTML preview for visual reference.
 
