@@ -46,7 +46,7 @@ Method: POST
 Description: Adds a new school to the database.
 
 ✅ Request (cURL)
-curl -X POST http://localhost:5000/addSchool \
+curl -X POST https://schoos-assignment.onrender.com/addSchool \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Green Valley High School",
@@ -56,6 +56,7 @@ curl -X POST http://localhost:5000/addSchool \
   }'
 
 📦 Example Response
+```
 {
   "success": true,
   "message": "School added successfully",
@@ -67,7 +68,7 @@ curl -X POST http://localhost:5000/addSchool \
     "longitude": 78.486671
   }
 }
-
+```
 2️⃣ List Schools by Distance API
 
 Endpoint: /listSchools
@@ -75,7 +76,7 @@ Method: GET
 Description: Fetch all schools and return them sorted by proximity to user’s location.
 
 ✅ Request (cURL)
-curl -X GET "http://localhost:5000/listSchools?latitude=17.3850&longitude=78.4867"
+curl -X GET "https://schoos-assignment.onrender.com/listSchools?latitude=17.3850&longitude=78.4867"
 
 📦 Example Response
 {
@@ -135,5 +136,5 @@ Test /addSchool and /listSchools APIs with your desired input.
 
 👨‍💻 Author
 
-Chaithanya Neelam
+Neelam Chaithanya
 📌 GitHub: chaithanya66
